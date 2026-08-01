@@ -2442,9 +2442,9 @@ details p {
   width: 100%;
   margin: 0;
   overflow: hidden;
-  background: var(--soft);
-  border: 1px solid rgba(0, 0, 0, .06);
-  border-radius: 8px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .business-school-hero-image img {
@@ -3568,6 +3568,17 @@ details p {
   font-size: 19px;
   font-weight: 750;
   line-height: 1.45;
+}
+
+.business-school-course-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-top: 24px;
+  object-fit: cover;
+  background: #000;
+  border-radius: 8px;
 }
 
 .course-facts {

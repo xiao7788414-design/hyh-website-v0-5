@@ -491,7 +491,7 @@ const setupScrollAwareAutoplayVideo = (video) => {
   });
 };
 
-document.querySelectorAll(".home-latest-video, .home-school-video").forEach(setupScrollAwareAutoplayVideo);
+document.querySelectorAll(".home-latest-video, .home-school-video, .business-school-course-video").forEach(setupScrollAwareAutoplayVideo);
 
 const latestCourseTrigger = document.querySelector("[data-latest-course-trigger]");
 const latestCourseDialog = document.querySelector("#latest-course-dialog");
