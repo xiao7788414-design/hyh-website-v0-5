@@ -493,6 +493,118 @@ const setupScrollAwareAutoplayVideo = (video) => {
 
 document.querySelectorAll(".home-latest-video, .home-school-video, .business-school-course-video").forEach(setupScrollAwareAutoplayVideo);
 
+const homeHeroCarousel = document.querySelector("[data-home-hero-carousel]");
+
+if (homeHeroCarousel) {
+  const homeHeroTrack = homeHeroCarousel.querySelector("[data-home-hero-track]");
+  const homeHeroSlides = Array.from(homeHeroCarousel.querySelectorAll("[data-home-hero-slide]"));
+  const homeHeroDots = Array.from(homeHeroCarousel.querySelectorAll("[data-home-hero-dot]"));
+  const homeHeroVideo = homeHeroCarousel.querySelector(".home-hero-video");
+  let activeHomeHeroSlide = 0;
+  let homeHeroInView = false;
+  let homeHeroScrollFrame = 0;
+
+  const syncHomeHeroHeight = () => {
+    const activeSlide = homeHeroSlides[activeHomeHeroSlide];
+    if (!activeSlide) return;
+    homeHeroTrack.style.height = `${activeSlide.scrollHeight}px`;
+  };
+
+  const playHomeHeroVideo = () => {
+    if (!homeHeroVideo || !homeHeroInView || document.hidden || activeHomeHeroSlide !== 1) return;
+    homeHeroVideo.play().catch(() => {
+      // Muted autoplay can still be blocked by browser or data-saving settings.
+    });
+  };
+
+  const updateHomeHeroState = (index) => {
+    const nextIndex = Math.max(0, Math.min(index, homeHeroSlides.length - 1));
+    if (nextIndex === activeHomeHeroSlide) {
+      syncHomeHeroHeight();
+      playHomeHeroVideo();
+      return;
+    }
+
+    activeHomeHeroSlide = nextIndex;
+    homeHeroDots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeHomeHeroSlide;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", String(isActive));
+    });
+    homeHeroSlides.forEach((slide, slideIndex) => {
+      slide.setAttribute("aria-hidden", String(slideIndex !== activeHomeHeroSlide));
+    });
+    syncHomeHeroHeight();
+
+    if (activeHomeHeroSlide === 1) {
+      playHomeHeroVideo();
+    } else if (homeHeroVideo) {
+      homeHeroVideo.pause();
+    }
+  };
+
+  const moveHomeHeroTo = (index, behavior = "smooth") => {
+    const targetLeft = index * homeHeroTrack.clientWidth;
+    if (behavior === "auto") {
+      homeHeroTrack.scrollLeft = targetLeft;
+    } else {
+      homeHeroTrack.scrollTo({ left: targetLeft, behavior });
+    }
+    updateHomeHeroState(index);
+  };
+
+  homeHeroDots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      moveHomeHeroTo(dotIndex);
+    });
+  });
+
+  homeHeroTrack.addEventListener("scroll", () => {
+    if (homeHeroScrollFrame) return;
+    homeHeroScrollFrame = requestAnimationFrame(() => {
+      homeHeroScrollFrame = 0;
+      const width = homeHeroTrack.clientWidth;
+      if (!width) return;
+      updateHomeHeroState(Math.round(homeHeroTrack.scrollLeft / width));
+    });
+  }, { passive: true });
+
+  const homeHeroObserver = new IntersectionObserver(([entry]) => {
+    homeHeroInView = entry.isIntersecting && entry.intersectionRatio >= 0.15;
+    if (!homeHeroInView && activeHomeHeroSlide === 1) {
+      homeHeroVideo.pause();
+      homeHeroVideo.currentTime = 0;
+      moveHomeHeroTo(0, "auto");
+    } else {
+      playHomeHeroVideo();
+    }
+  }, { threshold: [0, 0.15] });
+
+  homeHeroObserver.observe(homeHeroCarousel);
+
+  window.addEventListener("resize", () => {
+    moveHomeHeroTo(activeHomeHeroSlide, "auto");
+    syncHomeHeroHeight();
+  });
+
+  if ("ResizeObserver" in window) {
+    const homeHeroResizeObserver = new ResizeObserver(syncHomeHeroHeight);
+    homeHeroSlides.forEach((slide) => homeHeroResizeObserver.observe(slide));
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && homeHeroVideo) {
+      homeHeroVideo.pause();
+    } else {
+      playHomeHeroVideo();
+    }
+  });
+
+  updateHomeHeroState(0);
+  window.addEventListener("load", syncHomeHeroHeight, { once: true });
+}
+
+
 const latestCourseTrigger = document.querySelector("[data-latest-course-trigger]");
 const latestCourseDialog = document.querySelector("#latest-course-dialog");
 const latestCourseClose = document.querySelector("[data-latest-course-close]");
