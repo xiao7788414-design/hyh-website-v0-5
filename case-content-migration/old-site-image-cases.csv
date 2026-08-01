@@ -1,0 +1,31 @@
+requested_order,brand,slug,category,card_order,card_asset,old_url,existing_anchor,target_url,content_image_count,source_accessibility,implementation_status
+1,百邦,baibang,家装&家电,07,assets/cases-old/case-065.jpg,https://www.huayuhua.com/index/Anli/show/catid/36/id/209.html,,cases/baibang.html,2,可访问,已生成并内链
+2,简一瓷砖,jianyi-tiles,家装&家电,02,assets/cases-old/case-060.png,https://www.huayuhua.com/index/Anli/show/catid/36/id/141.html,,cases/jianyi-tiles.html,4,可访问,已生成并内链
+3,胃痛宁,weitongning,医药&医美,09,assets/cases-old/case-057.jpg,https://www.huayuhua.com/index/Anli/show/catid/35/id/214.html,,cases/weitongning.html,2,可访问,已生成并内链
+4,辅仁药业,furen-pharma,医药&医美,08,assets/cases-old/case-056.jpg,https://www.huayuhua.com/index/Anli/show/catid/35/id/215.html,,cases/furen-pharma.html,2,可访问,已生成并内链
+5,奈瑞儿,naireer,医药&医美,06,assets/cases-old/case-054.jpg,https://www.huayuhua.com/index/Anli/show/catid/35/id/202.html,,cases/naireer.html,4,可访问,已生成并内链
+6,珍视明,zhenshiming,医药&医美,05,assets/cases-old/case-053.jpg,https://www.huayuhua.com/index/Anli/show/catid/35/id/201.html,,cases/zhenshiming.html,1,可访问,已生成并内链
+7,康必得,kangbide,医药&医美,04,assets/cases-old/case-052.png,https://www.huayuhua.com/index/Anli/show/catid/35/id/139.html,,cases/kangbide.html,2,可访问,已生成并内链
+8,三精蓝瓶,sanjing-lanping,医药&医美,03,assets/cases-old/case-051.png,https://www.huayuhua.com/index/Anli/show/catid/35/id/138.html,,cases/sanjing-lanping.html,5,可访问,已生成并内链
+9,益佰制药,yibai-pharma,医药&医美,02,assets/cases-old/case-050.jpg,https://www.huayuhua.com/index/Anli/show/catid/35/id/137.html,case-yibai,cases/yibai-pharma.html,5,可访问,已生成并内链
+10,giftlab,giftlab,互联网&电商,10,assets/cases-old/case-048.jpg,https://www.huayuhua.com/index/Anli/show/catid/33/id/212.html,,cases/giftlab.html,2,可访问,已生成并内链
+11,上上签,shangshangqian,互联网&电商,08,assets/cases-old/case-046.jpg,https://www.huayuhua.com/index/Anli/show/catid/33/id/200.html,,cases/shangshangqian.html,2,可访问,已生成并内链
+12,51.com,51-com,互联网&电商,06,assets/cases-old/case-044.jpg,https://www.huayuhua.com/index/Anli/show/catid/33/id/135.html,,cases/51-com.html,1,可访问,已生成并内链
+13,好大夫在线,haodafu-online,互联网&电商,05,assets/cases-old/case-043.jpg,https://www.huayuhua.com/index/Anli/show/catid/33/id/133.html,,cases/haodafu-online.html,4,可访问,已生成并内链
+14,2345.com,2345-com,互联网&电商,03,assets/cases-old/case-041.jpg,https://www.huayuhua.com/index/Anli/show/catid/33/id/134.html,,cases/2345-com.html,1,可访问,已生成并内链
+15,黄金酒,huangjinjiu,快消品,08,assets/cases-old/case-028.png,https://www.huayuhua.com/index/Anli/show/catid/30/id/129.html,,cases/huangjinjiu.html,2,可访问,已生成并内链
+16,田七牙膏,tianqi-toothpaste,洗护日化,01,assets/cases-old/case-067.png,https://www.huayuhua.com/index/Anli/show/catid/37/id/146.html,,cases/tianqi-toothpaste.html,4,可访问,已生成并内链
+17,世家,shijia,洗护日化,03,assets/cases-old/case-069.jpg,https://www.huayuhua.com/index/Anli/show/catid/37/id/204.html,,cases/shijia.html,2,可访问,已生成并内链
+18,晨冠奶粉,chenguan-milk,母婴用品,03,assets/cases-old/case-073.jpg,https://www.huayuhua.com/index/Anli/show/catid/47/id/227.html,,cases/chenguan-milk.html,2,可访问,已生成并内链
+19,淘车,taoche,交通出行,02,assets/cases-old/case-081.jpg,https://www.huayuhua.com/index/Anli/show/catid/39/id/205.html,,cases/taoche.html,2,可访问,已生成并内链
+20,雷丁,leiding,交通出行,03,assets/cases-old/case-082.png,https://www.huayuhua.com/index/Anli/show/catid/39/id/155.html,,cases/leiding.html,2,可访问,已生成并内链
+21,孔雀城,kongquecheng,地产&酒店,03,assets/cases-old/case-087.jpg,https://www.huayuhua.com/index/Anli/show/catid/40/id/158.html,,cases/kongquecheng.html,2,可访问,已生成并内链
+22,中铁国际生态城,zhongtie-guoji-shengtaicheng,地产&酒店,04,assets/cases-old/case-088.jpg,https://www.huayuhua.com/index/Anli/show/catid/40/id/218.html,,cases/zhongtie-guoji-shengtaicheng.html,1,可访问,已生成并内链
+23,读客文化,duke-culture,文化和生活服务,03,assets/cases-old/case-091.png,https://www.huayuhua.com/index/Anli/show/catid/41/id/159.html,,cases/duke-culture.html,6,可访问,已生成并内链
+24,晨光文具,m-g-stationery,文化和生活服务,06,assets/cases-old/case-094.png,https://www.huayuhua.com/index/Anli/show/catid/41/id/162.html,,cases/m-g-stationery.html,6,可访问,已生成并内链
+25,六颗星,liukexing,农产&农资,01,assets/cases-old/case-096.png,https://www.huayuhua.com/index/Anli/show/catid/48/id/168.html,,cases/liukexing.html,2,可访问,已生成并内链
+26,湘村黑猪,xiangcun-heizhu,农产&农资,02,assets/cases-old/case-097.jpg,https://www.huayuhua.com/index/Anli/show/catid/48/id/224.html,,cases/xiangcun-heizhu.html,2,可访问,已生成并内链
+27,额尔古纳,eerguna,城市品牌,03,assets/cases-old/case-101.jpg,https://www.huayuhua.com/index/Anli/show/catid/42/id/206.html,,cases/eerguna.html,4,可访问,已生成并内链
+28,呼伦贝尔,hulunbuir,城市品牌,04,assets/cases-old/case-102.jpg,https://www.huayuhua.com/index/Anli/show/catid/42/id/207.html,,cases/hulunbuir.html,1,可访问,已生成并内链
+29,福鞍,fuan,B to B,03,assets/cases-old/case-105.jpg,https://www.huayuhua.com/index/Anli/show/catid/43/id/208.html,,cases/fuan.html,4,可访问,已生成并内链
+30,大咖国际,daka-international,B to B,04,assets/cases-old/case-106.jpg,https://www.huayuhua.com/index/Anli/show/catid/43/id/228.html,,cases/daka-international.html,4,可访问,已生成并内链

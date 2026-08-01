@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img" aria-labelledby="title desc">
+  <title id="title">华杉讲透资治通鉴三十一册</title>
+  <desc id="desc">华杉讲透资治通鉴全套三十一册文库封面</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6df82"/><stop offset="1" stop-color="#dba51e"/></linearGradient></defs>
+  <rect width="500" height="700" rx="22" fill="url(#bg)"/>
+  <rect x="32" y="32" width="436" height="636" rx="12" fill="none" stroke="#5b3517" stroke-width="4"/>
+  <text x="250" y="105" text-anchor="middle" fill="#5b3517" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700">华杉讲透</text>
+  <text x="250" y="245" text-anchor="middle" fill="#24170d" font-family="STKaiti, Kaiti SC, serif" font-size="74" font-weight="700">资治通鉴</text>
+  <line x1="105" y1="292" x2="395" y2="292" stroke="#5b3517" stroke-width="3"/>
+  <text x="250" y="375" text-anchor="middle" fill="#5b3517" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="800">全套 31 册</text>
+  <text x="250" y="570" text-anchor="middle" fill="#5b3517" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="24">通篇大白话 · 讲透古人智慧</text>
+  <text x="250" y="625" text-anchor="middle" fill="#24170d" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700">华杉 著</text>
+</svg>

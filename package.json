@@ -1,0 +1,19 @@
+{
+  "name": "huayuhua-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hua & Hua website and contact form mail service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:email": "CONTACT_DRY_RUN=false node --env-file=.env server.js",
+    "dev": "CONTACT_DRY_RUN=true node server.js",
+    "build:en": "python3 tools/build_english.py",
+    "check": "node --check server.js && node --check script.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.3"
+  }
+}
