@@ -461,37 +461,37 @@ document.querySelectorAll("[data-founded-years]").forEach((node) => {
   }
 });
 
-const homeLatestVideo = document.querySelector(".home-latest-video");
+const setupScrollAwareAutoplayVideo = (video) => {
+  let videoInView = true;
 
-if (homeLatestVideo) {
-  let homeLatestVideoInView = true;
-
-  const playHomeLatestVideo = () => {
-    if (!homeLatestVideoInView || document.hidden) return;
-    homeLatestVideo.play().catch(() => {
+  const playVideo = () => {
+    if (!videoInView || document.hidden) return;
+    video.play().catch(() => {
       // Some browser or system-level data-saving settings can still block autoplay.
     });
   };
 
-  const homeLatestVideoObserver = new IntersectionObserver(([entry]) => {
-    homeLatestVideoInView = entry.isIntersecting && entry.intersectionRatio >= 0.4;
-    if (homeLatestVideoInView) {
-      playHomeLatestVideo();
+  const videoObserver = new IntersectionObserver(([entry]) => {
+    videoInView = entry.isIntersecting && entry.intersectionRatio >= 0.4;
+    if (videoInView) {
+      playVideo();
     } else {
-      homeLatestVideo.pause();
+      video.pause();
     }
   }, { threshold: [0, 0.4] });
 
-  homeLatestVideoObserver.observe(homeLatestVideo);
+  videoObserver.observe(video);
 
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
-      homeLatestVideo.pause();
+      video.pause();
     } else {
-      playHomeLatestVideo();
+      playVideo();
     }
   });
-}
+};
+
+document.querySelectorAll(".home-latest-video, .home-school-video").forEach(setupScrollAwareAutoplayVideo);
 
 const latestCourseTrigger = document.querySelector("[data-latest-course-trigger]");
 const latestCourseDialog = document.querySelector("#latest-course-dialog");
