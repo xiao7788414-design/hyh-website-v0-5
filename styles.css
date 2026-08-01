@@ -1240,6 +1240,176 @@ details p {
   }
 }
 
+.home-school-section {
+  background: #f5f5f7;
+}
+
+.home-school-heading {
+  margin-bottom: clamp(34px, 4vw, 56px);
+}
+
+.home-school-heading h2 {
+  color: var(--ink);
+  font-size: clamp(32.2px, 3.01vw, 49px);
+  line-height: 1.08;
+  font-weight: 850;
+}
+
+.home-school-heading h3 {
+  margin-top: 18px;
+  color: var(--red);
+  font-size: clamp(27px, 2.6vw, 42px);
+  line-height: 1.16;
+  font-weight: 850;
+}
+
+.home-school-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(320px, .84fr);
+  gap: clamp(38px, 5vw, 72px);
+  align-items: center;
+}
+
+.home-school-video-placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(227, 0, 18, .26), transparent 32%),
+    linear-gradient(135deg, #252527 0%, #080809 100%);
+  border-radius: 8px;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, .16);
+}
+
+.home-school-video-mark {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-left: 4px;
+  color: #fff;
+  background: var(--red);
+  border-radius: 999px;
+  font-size: 20px;
+}
+
+.home-school-video-placeholder p {
+  color: rgba(255, 255, 255, .68);
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: .12em;
+}
+
+.home-school-video-placeholder strong {
+  margin-top: 8px;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.2;
+  font-weight: 850;
+}
+
+.home-school-copy {
+  min-width: 0;
+  color: rgba(29, 29, 31, .7);
+  font-size: 17px;
+  line-height: 1.75;
+  font-weight: 560;
+}
+
+.home-school-tagline {
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(23px, 2vw, 31px);
+  line-height: 1.3;
+  font-weight: 850;
+}
+
+.home-school-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0 0;
+}
+
+.home-school-facts div {
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 6px;
+}
+
+.home-school-facts dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.home-school-facts dd {
+  margin: 5px 0 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 850;
+}
+
+.home-school-more {
+  display: inline-block;
+  margin-top: 26px;
+  color: var(--red);
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.home-school-more:hover {
+  color: var(--ink);
+}
+
+.home-school-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+  border-radius: 8px;
+}
+
+@media (max-width: 980px) {
+  .home-school-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .home-school-heading h2 {
+    font-size: 23.8px;
+  }
+
+  .home-school-heading h3 {
+    margin-top: 12px;
+    font-size: 27px;
+  }
+
+  .home-school-copy {
+    font-size: 16px;
+    line-height: 1.68;
+  }
+
+  .home-school-tagline {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-school-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
 .home-million-award-section {
   background:
     radial-gradient(circle at 18% 50%, rgba(227, 0, 18, .055), transparent 34%),
