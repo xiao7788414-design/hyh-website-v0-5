@@ -468,6 +468,7 @@ html[lang="en"] .nav {
 }
 
 .home-hero-carousel {
+  position: relative;
   width: var(--max);
   margin: 0 auto;
   overflow: hidden;
@@ -515,6 +516,13 @@ html[lang="en"] .nav {
   width: 100%;
 }
 
+@media (min-width: 981px) {
+  .home-hero-carousel .hero {
+    min-height: max(622px, calc(var(--max) * 9 / 16));
+    align-items: end;
+  }
+}
+
 .home-hero-video-slide {
   min-height: 0;
   display: flex;
@@ -533,12 +541,17 @@ html[lang="en"] .nav {
 }
 
 .home-hero-pagination {
-  min-height: 34px;
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  z-index: 3;
+  min-height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
-  background: #f6f6f8;
+  background: transparent;
 }
 
 .home-hero-dot {
