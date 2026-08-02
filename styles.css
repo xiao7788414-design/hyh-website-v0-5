@@ -2164,12 +2164,19 @@ details p {
   font-weight: 850;
 }
 
-.ai-feature-video-placeholder {
+.ai-feature-video-placeholder,
+.ai-feature-video {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #f5f5f7;
   border: 1px solid rgba(0, 0, 0, .08);
   border-radius: 8px;
+}
+
+.ai-feature-video {
+  height: auto;
+  object-fit: contain;
 }
 
 .ai-feature-copy {
