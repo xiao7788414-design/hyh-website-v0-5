@@ -491,7 +491,7 @@ const setupScrollAwareAutoplayVideo = (video) => {
   });
 };
 
-document.querySelectorAll(".home-latest-video, .home-school-video, .business-school-course-video, .ai-feature-video").forEach(setupScrollAwareAutoplayVideo);
+document.querySelectorAll(".home-latest-video, .home-school-video, .business-school-course-video, .home-million-award-video, .ai-feature-video").forEach(setupScrollAwareAutoplayVideo);
 
 const homeHeroCarousel = document.querySelector("[data-home-hero-carousel]");
 
