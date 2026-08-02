@@ -528,7 +528,9 @@ html[lang="en"] .nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  padding: clamp(10px, 1.25vw, 18px);
+  box-sizing: border-box;
+  background: #fff;
 }
 
 .home-hero-video {
@@ -537,7 +539,18 @@ html[lang="en"] .nav {
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: contain;
-  background: #000;
+  background: #fff;
+}
+
+@media (min-width: 981px) {
+  .home-hero-video-slide {
+    height: max(622px, calc(var(--max) * 9 / 16));
+  }
+
+  .home-hero-video {
+    height: 100%;
+    aspect-ratio: auto;
+  }
 }
 
 .home-hero-pagination {
