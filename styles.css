@@ -1898,6 +1898,8 @@ details p {
 }
 
 .legacy-case-item {
+  position: relative;
+  isolation: isolate;
   display: block;
   aspect-ratio: 311 / 176;
   overflow: hidden;
@@ -1917,7 +1919,8 @@ details p {
   object-fit: contain;
 }
 
-.legacy-case-item:hover img {
+.legacy-case-item:hover img,
+.legacy-case-item:focus-visible img {
   transform: scale(1.035);
 }
 
@@ -2022,9 +2025,44 @@ details p {
 }
 
 .case-image-link {
+  position: relative;
+  isolation: isolate;
   display: block;
   line-height: 0;
   overflow: hidden;
+}
+
+.case-image-link::after,
+.legacy-case-item::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -35%;
+  bottom: -35%;
+  left: -65%;
+  width: 42%;
+  pointer-events: none;
+  opacity: 0;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, .82),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.case-image-link:hover::after,
+.case-image-link:focus-visible::after,
+.legacy-case-item:hover::after,
+.legacy-case-item:focus-visible::after {
+  animation: client-case-shine .68s ease-out;
+}
+
+.case-image-link:focus-visible,
+.legacy-case-item:focus-visible {
+  outline: 3px solid rgba(217, 29, 36, .35);
+  outline-offset: -3px;
 }
 
 .case-card img {
@@ -2035,8 +2073,23 @@ details p {
   transition: transform .22s ease;
 }
 
-.case-image-link:hover img {
+.case-image-link:hover img,
+.case-image-link:focus-visible img {
   transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-image-link img,
+  .legacy-case-item img {
+    transition: none;
+  }
+
+  .case-image-link:hover::after,
+  .case-image-link:focus-visible::after,
+  .legacy-case-item:hover::after,
+  .legacy-case-item:focus-visible::after {
+    animation: none;
+  }
 }
 
 .case-card .case-body {
