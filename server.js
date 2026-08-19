@@ -21,7 +21,7 @@ const allowedRevenue = new Set([
   "1亿以下", "1-5亿", "5-10亿", "10-25亿", "25-50亿", "50-100亿", "100亿以上"
 ]);
 const allowedChannels = new Set([
-  "机场广告", "杂志广告", "网络搜索", "书籍", "得到课程", "抖音", "朋友推荐", "案例", "其他"
+  "机场广告", "杂志广告", "网络搜索", "书籍", "得到课程", "抖音", "抖音/视频号/公众号", "朋友推荐", "案例", "其他"
 ]);
 const attempts = new Map();
 
@@ -38,9 +38,16 @@ const upload = multer({
 app.disable("x-powered-by");
 app.set("trust proxy", process.env.TRUST_PROXY === "true" ? 1 : false);
 app.use((request, response, next) => {
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
   response.setHeader("X-Content-Type-Options", "nosniff");
   response.setHeader("X-Frame-Options", "SAMEORIGIN");
   response.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+
+  if (request.method === "OPTIONS") {
+    return response.status(204).end();
+  }
 
   const requestPath = request.path.toLowerCase();
   const privateFiles = new Set([
