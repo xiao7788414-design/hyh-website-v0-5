@@ -1130,6 +1130,12 @@ details p {
   transition: transform .22s ease;
 }
 
+.client-case-item--full-art img {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
 .client-case-item:hover img,
 .client-case-item:focus-visible img {
   transform: scale(1.035);
